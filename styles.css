@@ -413,3 +413,129 @@ footer{background:#060606;padding:1.6rem 4vw;display:flex;align-items:center;jus
   }
   #hero{grid-template-columns:55fr 45fr}
 }
+
+/* ════════════════════════════════════════════════════════════════
+   OVERALL QUALITY IMPROVEMENTS
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── SMOOTHER SECTION TRANSITIONS ── */
+section{transition:none}
+
+/* ── HERO: better vertical centering on short laptops ── */
+@media(min-height:900px){
+  .hero-l,.hero-r{padding-top:12rem}
+}
+
+/* ── TICKER: slightly larger, more readable ── */
+.t-item{font-size:.64rem;letter-spacing:.14em}
+.t-item .v{font-weight:500;letter-spacing:.06em}
+
+/* ── ABOUT STAT LABELS: cleaner hierarchy ── */
+.ab-stat-l strong{font-size:.8rem;color:var(--ink);display:block;margin-bottom:.12rem}
+.ab-stat-l span{font-size:.68rem;color:var(--muted);font-weight:300}
+
+/* ── HOLDING: org chart connectors sharper ── */
+.org-parent{box-shadow:0 0 0 1px rgba(123,163,212,.12),0 8px 32px rgba(0,0,0,.25)}
+.sub-c{transition:background .18s,transform .18s}
+.sub-c:hover{transform:translateY(-2px);background:rgba(255,255,255,.04)}
+.sc-name{letter-spacing:-.01em}
+
+/* ── QUOTE BREAK: improve readability ── */
+.q-break-t{letter-spacing:-.01em;font-weight:400}
+.q-break-t em{color:rgba(255,255,255,.75)}
+
+/* ── RETURNS TABLE: better row height ── */
+.rt-hd,.rt-r{align-items:center}
+.rt-r{min-height:48px}
+
+/* ── FLEET: photo overlay gradient improvement ── */
+.fi-ov{background:linear-gradient(to top,rgba(10,10,10,.72) 0%,rgba(10,10,10,.1) 45%,transparent 100%)}
+
+/* ── ROADMAP: cleaner milestone dots ── */
+.tl-item{cursor:default;user-select:none}
+.tl-date{letter-spacing:.12em}
+.tl-num{letter-spacing:-.02em}
+
+/* ── WHY: better intro paragraph ── */
+.why-desc{font-size:.84rem;line-height:1.95}
+
+/* ── CONTACT: form inputs sharper ── */
+.inv-field input:focus,.inv-field select:focus{
+  border-color:rgba(255,255,255,.45);
+  background:rgba(255,255,255,.07);
+}
+.inv-submit{letter-spacing:.16em;font-size:.65rem}
+.inv-submit:hover{background:var(--paper3)}
+
+/* ── BTT: more visible ── */
+.btt{border-radius:2px}
+.btt:hover{opacity:1}
+
+/* ── OVERALL: better link hover on dark ── */
+.ci-v a:hover{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+/* ── FOOTER: clean separation ── */
+footer{padding:1.8rem 4vw}
+.fl-n{letter-spacing:.25em}
+
+/* ── MOBILE: better touch targets ── */
+@media(max-width:920px){
+  .n-cta{display:none}
+  .ct-btns a{padding:.8rem 1.6rem;justify-content:center}
+  .mob a{min-height:48px;display:flex;align-items:center}
+  .inv-fields{grid-template-columns:1fr}
+}
+
+/* ── PRINT: improved ── */
+@media print{
+  .spb,.waf,.btt,footer,nav,.ticker{display:none!important}
+  section{padding:2rem 0;page-break-inside:avoid}
+  .rv{opacity:1!important;transform:none!important}
+  #hero{min-height:auto;grid-template-columns:1fr}
+  .hero-r{display:none}
+}
+
+/* ── ADDITIONAL QUALITY POLISH ── */
+
+/* Hero jobs arrow hint */
+.hk-n span{vertical-align:middle;margin-left:.15rem;opacity:.5}
+
+/* Holding parent glow */
+.org-parent{position:relative}
+.org-parent::before{content:'';position:absolute;inset:-1px;
+  background:linear-gradient(135deg,rgba(123,163,212,.15),transparent 60%);pointer-events:none}
+
+/* Roadmap: tighter nw line */
+.tl-nw{padding-top:.22rem;line-height:1.4}
+
+/* Contact: status indicator */
+#ci7v::before{content:'● ';font-size:.55rem;vertical-align:middle}
+
+/* About stat hover */
+.ab-stat{cursor:default}
+
+/* Returns caveat bullets */
+.ret-c::before{color:var(--navy);opacity:.6}
+
+/* Why section: number style */
+.wp-n{font-size:1rem;color:rgba(255,255,255,.15);font-style:italic}
+
+/* Nav active: stronger indicator */
+.n-links a.nav-active{color:var(--ink)}
+.n-links a.nav-active::after{width:100%;background:var(--navy);height:1.5px}
+
+/* Holding card sub worth: better spacing */
+.sc-worth span{display:block;margin-top:.18rem}
+
+/* Section label: cleaner */
+.s-lbl{color:rgba(107,106,98,.8)}
+
+/* Hero eyebrow */
+.h-ey{opacity:.7}
+
+/* Mobile: better hero spacing */
+@media(max-width:920px){
+  .h-h1{margin-bottom:2.5rem}
+  .h-ctas{flex-wrap:wrap;gap:1rem}
+  .h-kpi{min-width:120px}
+}
